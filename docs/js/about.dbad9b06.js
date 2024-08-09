@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkamount_app"]=self["webpackChunkamount_app"]||[]).push([[594],{571:function(n,u,a){a.r(u),a.d(u,{default:function(){return f}});var t=a(641);const e={class:"about"},r=(0,t.Lk)("h1",null,"This is an about page",-1),s=[r];function c(n,u){return(0,t.uX)(),(0,t.CE)("div",e,s)}var o=a(262);const p={},i=(0,o.A)(p,[["render",c]]);var f=i}}]);
-//# sourceMappingURL=about.dbad9b06.js.map
