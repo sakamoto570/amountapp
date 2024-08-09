@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory, } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Top from '../views/Top/Top.vue'
 
-const routes = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect: '/home',
