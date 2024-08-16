@@ -1,5 +1,4 @@
 <template>
-  ]
   <app-header />
   <!-- <nav>
     <router-link to="/">Home</router-link> |
@@ -10,6 +9,7 @@
 
 <script lang="ts">
 import AppHeader from "@/components/Header.vue";
+import '@/assets/css/tailwind.css'
 
 export default {
   name: "App",

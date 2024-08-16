@@ -4,7 +4,7 @@
     <div class="header-item">
       <div class="logo">家計簿アプリ</div>
       <nav>
-        <a href="/">ホーム</a>
+        <a href="/home">ホーム</a>
         <a href="/input">家計簿入力</a>
       </nav>
     </div>
