@@ -8,8 +8,9 @@
 </template>
 
 <script lang="ts">
-import AppHeader from "@/components/Header.vue";
-import '@/assets/css/tailwind.css'
+import "@/assets/css/tailwind.scss";
+import "@/assets/css/mq.scss";
+import AppHeader from "@/components/Header/Header.vue";
 
 export default {
   name: "App",
@@ -19,7 +20,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "@/assets/css/mq.scss";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -39,5 +42,8 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+body {
+  margin: 0;
 }
 </style>

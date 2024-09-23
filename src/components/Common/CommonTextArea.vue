@@ -1,22 +1,35 @@
 <template>
   <div>
     <label>{{ title }}</label>
-    <input :type="type" />
+    <textarea :rows="row" @input="inputText" :value="modelValue" />
   </div>
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+export default defineComponent( {
   name: "TextBox",
   props: {
     title: {
       type: String,
     },
-    type: {
+    row: {
+      type: String,
+    },
+    modelValue: {
       type: String,
     },
   },
-};
+  setup(props, { emit }) {
+    const inputText = (event: any) => {
+      emit("update:modelValue", event.target.value);
+    };
+
+    return {
+      inputText,
+    };
+  },
+});
 </script>
 
 <style lang="scss" scoped>
@@ -27,7 +40,7 @@ label {
   text-align: left;
 }
 
-input {
+textarea {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;

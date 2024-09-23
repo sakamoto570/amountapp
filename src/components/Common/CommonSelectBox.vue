@@ -14,7 +14,8 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+export default defineComponent({
   name: "TextBox",
   props: {
     title: {
@@ -23,13 +24,19 @@ export default {
     options: {
       type: Array,
     },
-  },
-  methods: {
-    handleChange(event: any) {
-      this.$emit("update:modelValue", event.target.value);
+    modelValue: {
+      type: String,
     },
   },
-};
+  setup(props, { emit }) {
+    const handleChange = (event: any) => {
+      // eslint-disable-next-line no-undef
+      emit("update:modelValue", event.target.value);
+    };
+
+    return { handleChange };
+  },
+});
 </script>
 
 <style lang="scss" scoped>

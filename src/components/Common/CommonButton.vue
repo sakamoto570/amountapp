@@ -1,5 +1,5 @@
 <template>
-  <button>保存する</button>
+  <button><slot /></button>
 </template>
 
 <script lang="ts">
@@ -12,7 +12,6 @@ export default {
 button {
   width: 100%;
   padding: 10px;
-  margin-top: 20px;
   background-color: #192663;
   color: white;
   border: none;

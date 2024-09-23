@@ -1,11 +1,18 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Top from '../views/Top/Top.vue'
 import Input from '@/views/Input/InputPage.vue'
+import Setteing from '@/views/Setting/Account_Setting.vue'
+import Login from '@/views/Login/Login.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/login',
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
   },
   {
     path: '/home',
@@ -16,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/input',
     name: 'input',
     component: Input
+  },
+  {
+    path: '/setting',
+    name: 'setting',
+    component: Setteing
   },
 ]
 

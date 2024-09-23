@@ -14,7 +14,7 @@
       <tr v-for="detail in details" :key="detail">
         <td>{{ detail.date }}</td>
         <td>{{ detail.item }}</td>
-        <td>{{ detail.itemeName }}</td>
+        <td>{{ detail.itemName }}</td>
         <td>{{ detail.amount }}</td>
         <td>{{ detail.account }}</td>
         <td>{{ detail.memo }}</td>
@@ -40,19 +40,20 @@ export default {
       type: Object,
     },
   },
-  //   settup(pr) {
-  //     return { details };
-  //   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/css/mq.scss";
 table {
   border-collapse: collapse;
   border: 2px solid #cfcfcf;
   font-family: sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   letter-spacing: 1px;
+  @include mq(sp) {
+    font-size: 14px;
+  }
 }
 th,
 td {
