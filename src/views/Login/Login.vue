@@ -40,6 +40,7 @@ import { ref } from "vue";
 import { defineComponent } from "vue";
 import axios from "axios";
 import { useRouter } from "vue-router";
+import { token_update } from "@/util/test";
 
 export default defineComponent({
   name: "LoginPage",
@@ -121,6 +122,8 @@ export default defineComponent({
         .then((response: any) => {
           // console.log(response.data);
           message.value = "サインイン成功!";
+          console.log(response);
+          token_update(response.data.session.access_token);
           router.push("/home");
           isLoading.value = false;
         })

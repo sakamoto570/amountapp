@@ -20,6 +20,7 @@ import CommonLoading from "@/components/Common/CommonLoading.vue";
 import { ref } from "vue";
 import { defineComponent } from "vue";
 import axios from "axios";
+import { token } from "@/util/test";
 
 export default defineComponent({
   name: "AccountSetteingModal",
@@ -46,13 +47,23 @@ export default defineComponent({
 
     const submitForm = async () => {
       isLoading.value = true;
+      console.log(token);
       // TBLへの登録処理
       await axios
-        .post("https://amountapp.netlify.app/.netlify/functions/insertBank", {
-          last_insert_date: new Date().toLocaleDateString('ja-JP'),
-          bank_name: accountName.value,
-          amount: accountAsset.value,
-        })
+        .post(
+          "https://amountapp.netlify.app/.netlify/functions/insertBank",
+          {
+            last_insert_date: new Date().toLocaleDateString("ja-JP"),
+            bank_name: accountName.value,
+            amount: accountAsset.value,
+          },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`,
+            },
+          }
+        )
         .then((response: any) => {
           // console.log(response.data);
           isLoading.value = false;
